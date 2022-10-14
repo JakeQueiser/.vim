@@ -144,4 +144,4 @@ nmap <silent> gr <Plug>(coc-references)
 imap jj <Esc>
 
 " global extensions
-let g:coc_global_extensions = ['coc-pyright', 'coc-clangd', 'coc-snippets']
+let g:coc_global_extensions = ['coc-pyright', 'coc-clangd', 'coc-snippets'] 

@@ -81,24 +81,20 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
 let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 
 " Ultisnips configuration
-
-" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-" - https://github.com/Valloric/YouCompleteMe
-" - https://github.com/nvim-lua/completion-nvim
 let g:UltiSnipsEditSplit="vertical"
 
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:coc_snippet_prev = '<s-tab>'
+let g:coc_snippet_next = '<tab>'
 
 " searching stuff
-let g:ctrlsf_default_root="project"
 nnoremap f = <Plug>CtrlSFPrompt
 nnoremap F = <Plug>CtrlSFCwordPath
 
-" Some servers have issues with backup files, see #649.
+" Some servers have issues with backup files 
 set nobackup
 set nowritebackup
 
@@ -127,7 +123,6 @@ function! CheckBackSpace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.

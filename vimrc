@@ -84,11 +84,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 let g:UltiSnipsEditSplit="vertical"
 
 
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:coc_snippet_prev = '<s-tab>'
-let g:coc_snippet_next = '<tab>'
 
 " searching stuff
 nnoremap f = <Plug>CtrlSFPrompt
@@ -123,6 +118,12 @@ function! CheckBackSpace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+let g:coc_snippet_prev = '<s-tab>'
+let g:coc_snippet_next = '<tab>'
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.

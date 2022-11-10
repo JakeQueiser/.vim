@@ -144,6 +144,29 @@ snippet 0 "Theta" i
 \theta
 endsnippet
 
+snippet aa "Alpha" i
+\alpha
+endsnippet
+
 snippet _ "Subscript" i
 _{$1} $0
+endsnippet
+
+snippet lp "Parenthesis" i
+\left( $1 \right) $0
+endsnippet
+
+snippet => "Implies" iA
+\implies $0
+endsnippet
+
+snippet <=> "Iff" iA
+\iff $0
+endsnippet
+
+snippet box "Box"
+`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
 endsnippet

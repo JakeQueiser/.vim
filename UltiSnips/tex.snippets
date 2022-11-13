@@ -170,3 +170,24 @@ snippet box "Box"
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
 endsnippet
+
+snippet bxd "Boxed" i
+\boxed{$1} $0
+endsnippet
+
+snippet nd "Noindent" i
+\noindent $0
+endsnippet
+
+snippet code "Code font" i
+\texttt{$1} $0
+endsnippet
+
+snippet fig "Figure"
+\begin{figure}[$1]
+	\includegraphics{$2}
+	\caption{$3}
+	\centering
+\end{figure}
+$0
+endsnippet

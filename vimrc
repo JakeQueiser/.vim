@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'dyng/ctrlsf.vim'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'stevearc/vim-arduino'
 call plug#end()
 
 syntax on

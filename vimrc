@@ -15,6 +15,8 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'stevearc/vim-arduino'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 syntax on
@@ -48,6 +50,15 @@ nnoremap <space> = za
 
 " NERDTree config
 nnoremap <silent> <C-e> = :NERDTreeToggle<CR>
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
 let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 " Refresh the current folder if any changes
@@ -89,6 +100,15 @@ let g:UltiSnipsEditSplit="vertical"
 " searching stuff
 nnoremap f = <Plug>CtrlSFPrompt
 nnoremap F = <Plug>CtrlSFCwordPath
+let g:ctrlsf_search_mode = 'async'
+
+" search window
+let g:ctrlsf_auto_focus = {
+    \ "at": "start"
+    \ }
+let g:ctrlsf_mapping = {
+    \ "tabb": "<Enter>",
+    \ }
 
 " Some servers have issues with backup files 
 set nobackup

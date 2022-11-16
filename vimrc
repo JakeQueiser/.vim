@@ -142,3 +142,5 @@ imap jj <Esc>
 
 " global extensions
 let g:coc_global_extensions = ['coc-pyright', 'coc-clangd', 'coc-snippets'] 
+
+let g:livepreview_previewer = 'zathura'

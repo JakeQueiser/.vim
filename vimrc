@@ -9,7 +9,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'jacoborus/tender.vim'
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
-Plug 'xuhdev/vim-latex-live-preview'
 Plug 'tpope/vim-fugitive'
 Plug 'dyng/ctrlsf.vim'
 Plug 'tpope/vim-surround'
@@ -18,6 +17,9 @@ Plug 'stevearc/vim-arduino'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
+
+
+filetype plugin indent on
 
 syntax on
 let g:PaperColor_Theme_Options = {
@@ -162,5 +164,3 @@ imap jj <Esc>
 
 " global extensions
 let g:coc_global_extensions = ['coc-pyright', 'coc-clangd', 'coc-snippets'] 
-
-let g:livepreview_previewer = 'zathura'

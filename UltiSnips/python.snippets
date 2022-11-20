@@ -9,7 +9,26 @@ $0
 endsnippet
 
 
-snippet ( "Paren" iA
+snippet ( "Parenthesis" iA
 (${1:${VISUAL}})$0
 endsnippet
 
+snippet { "Braces" iA
+{${1:${VISUAL}}}$0
+endsnippet
+
+snippet [ "Brackets" iA
+[${1:${VISUAL}}]$0
+endsnippet
+
+snippet if "If statement"
+if ($1):
+	$2
+${0:else:}
+endsnippet
+
+snippet elif "Else if"
+elif ($1):
+	$2
+${0:else:}
+endsnippet

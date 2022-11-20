@@ -183,16 +183,24 @@ snippet { "Curlys"
 \left{ ${1:${VISUAL}} \right} $0
 endsnippet
 
-snippet => "Implies"
+snippet => "Implies" iA
 \implies $0
 endsnippet
 
-snippet <=> "Iff"
+snippet <=> "Iff" iA
 \iff $0
 endsnippet
 
+snippet -> "Right arrow" iA
+\implies $0
+endsnippet
+
+snippet <- "Left arrow" iA
+\implies $0
+endsnippet
+
 snippet bxd "Boxed" 
-\boxed{$1} $0
+\boxed{${1:${VISUAL}}} $0
 endsnippet
 
 snippet nd "Noindent" 

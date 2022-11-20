@@ -5,58 +5,60 @@ snippet beg "Opens a begin section"
 endsnippet
 
 snippet par "Start a paragraph"
-\paragraph{$1} $0
+\paragraph{$1}
 endsnippet
 
 snippet sec "Start a section"
-\section{$1} $0
+\section{$1}
 endsnippet
 
 snippet ssec "Start a subsection"
-\subsection{$1} $0
+\subsection{$1}
 endsnippet
 
 snippet sssec "Start a subsubsection"
-\subsubsection{$1} $0
+\subsubsection{$1}
 endsnippet
 
 snippet sec* "Start a section"
-\section*{$1} $0
+\section*{$1}
 endsnippet
 
 snippet ssec* "Start a subsection"
-\subsection*{$1} $0
+\subsection*{$1}
 endsnippet
 
 snippet sssec* "Start a subsubsection"
-\subsubsection*{$1} $0
+\subsubsection*{$1}
 endsnippet
 
 snippet eq "An equation"
 \begin{equation}
-	$1
+	${1:${VISUAL}}
 \end{equation}
+$0
 endsnippet
 
 snippet eq* "An equation"
 \begin{equation*}
-	$1
+	${1:${VISUAL}}
 \end{equation*}
+$0
 endsnippet
 
 snippet bmat "A bmatrix" i
 \begin{bmatrix} $1 \end{bmatrix} $0
 endsnippet
 
-snippet 4 "Dollarsign"
-$ $1 $ $0
+snippet 4 "Inline math"
+\( ${1:${VISUAL}} \) $0
 endsnippet
 
-snippet [ "Math braket"
+snippet 44 "Broken math"
 \[
-	$1
+	${1:${VISUAL}}
 \]
-$0
+$0 
 endsnippet
 
 snippet cent "Center environemt"
@@ -77,11 +79,11 @@ $0
 endsnippet
 
 snippet v "Vector" i
-\vec{$1}$0
+\vec{$1}
 endsnippet
 
 snippet h "Hat" i
-\hat{$1}$0
+\hat{$1}
 endsnippet
 
 snippet sum "Summation"
@@ -94,14 +96,16 @@ endsnippet
 
 snippet ali "Aligned and labeled"
 \begin{align}
-	$0
+	${1:${VISUAL}}
 \end{align}
+$0
 endsnippet
 
 snippet ali* "Aligned"
 \begin{align*}
-	$0
+	${1:${VISUAL}}
 \end{align*}
+$0
 endsnippet
 
 snippet frac "Fraction" i
@@ -119,19 +123,34 @@ snippet enum "List"
 endsnippet
 
 snippet bf "Bold" i
-\textbf{$1} $0
+\textbf{${1:${VISUAL}}}
 endsnippet
 
 snippet te "Text" i
-\text{$1} $0
+\text{${1:${VISUAL}}}
 endsnippet
 
-snippet bul "Itemize"
+#snippet bul "Itemize"
+#\begin{itemize}
+#	$0
+#\end{itemize}
+#endsnippet
+# case a
+snippet \item "start list of items" b
 \begin{itemize}
-	$0
+	\item $1
 \end{itemize}
 endsnippet
 
+# case b
+snippet "(^\s*)\\item\s*\S+.*$" "create next item" r
+`!p snip.rv=match.group(0)`
+`!p snip.rv=match.group(1)`\item $0
+endsnippet
+
+# case c
+snippet "^\s*\\item\s*" "exit itemize" r
+endsnippet
 snippet io "Item" i
 \item $0
 endsnippet
@@ -152,39 +171,40 @@ snippet _ "Subscript" i
 _{$1} $0
 endsnippet
 
-snippet lp "Parenthesis" i
-\left( $1 \right) $0
+snippet ( "Parenthesis"
+\left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet => "Implies" iA
+snippet [ "Brackets"
+\left[ ${1:${VISUAL}} \right] $0
+endsnippet
+
+snippet { "Curlys"
+\left{ ${1:${VISUAL}} \right} $0
+endsnippet
+
+snippet => "Implies"
 \implies $0
 endsnippet
 
-snippet <=> "Iff" iA
+snippet <=> "Iff"
 \iff $0
 endsnippet
 
-snippet box "Box"
-`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
-│ $1 │
-`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
-$0
-endsnippet
-
-snippet bxd "Boxed" i
+snippet bxd "Boxed" 
 \boxed{$1} $0
 endsnippet
 
-snippet nd "Noindent" i
+snippet nd "Noindent" 
 \noindent $0
 endsnippet
 
-snippet code "Code font" i
-\texttt{$1} $0
+snippet code "Code font" 
+\texttt{${1:${VISUAL}}} $0
 endsnippet
 
 snippet fig "Figure"
-\begin{figure}[$1]
+\begin{figure}[${1:H}]
 	\includegraphics{$2}
 	\caption{$3}
 	\centering

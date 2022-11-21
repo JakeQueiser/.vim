@@ -43,7 +43,7 @@ set relativenumber
 " enable folding
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> = za
+nnoremap <space> za
 
 " NERDTree config
 nnoremap <silent> <C-e> = :NERDTreeToggle<CR>
@@ -72,8 +72,8 @@ augroup END
 set hlsearch
 
 " change tab switch keys
-nnoremap <Right> = gt
-nnoremap <Left> = gT
+nnoremap <Right> gt
+nnoremap <Left> gT
 
 " window splits
 set splitbelow
@@ -89,14 +89,10 @@ nmap <silent> <c-l> :wincmd l<CR>
 let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
 let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 
-" Ultisnips configuration
-let g:UltiSnipsEditSplit="vertical"
-
-
-
 " searching stuff
-nnoremap f = <Plug>CtrlSFPrompt
-nnoremap F = <Plug>CtrlSFCwordPath
+nnoremap <c-f> <Plug>CtrlSFPrompt
+nnoremap <c-p> <Plug>CtrlSFCwordPath
+vmap <c-f> <Plug>CtrlSFVwordPath
 let g:ctrlsf_search_mode = 'async'
 
 " search window

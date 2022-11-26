@@ -15,6 +15,8 @@ Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
+" use Ctrl + @ to copy to the system clipboard (wayland only)
+nnoremap <C-@> :call system("wl-copy", @")<CR>
 
 syntax on
 let g:PaperColor_Theme_Options = {

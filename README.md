@@ -25,12 +25,12 @@ For security purposes, installing Node via NVM (node version manager) will ensur
 nvm install node
 ```
 
-### (3) Open vim and run the command:
+### (4) Open vim and run the command:
 ```
 :PlugInstall
 ```
 
-### (4) Git setup
+### (5) Git setup
 Enter these commands:
 ```
 git config merge.tool vimdiff

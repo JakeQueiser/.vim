@@ -30,14 +30,6 @@ let g:PaperColor_Theme_Options = {
   \ }
 colorscheme PaperColor
 
-
-" Backspace fix on macos
-if has('macunix')
-	set backspace=indent,eol,start	
-" 	highlight Normal ctermbg=NONE
-" 	highlight nonText ctermbg=NONE
-endif
-
 " enable line numbers
 set number
 set relativenumber

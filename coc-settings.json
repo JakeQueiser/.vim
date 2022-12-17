@@ -1,4 +1,5 @@
 {
     "coc.preferences.jumpCommand": "tabe",
-	"snippets.userSnippetsDirectory": "$HOME/.vim/Ultisnips"
+	"snippets.userSnippetsDirectory": "$HOME/.vim/UltiSnips"
 }
+

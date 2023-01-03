@@ -29,6 +29,7 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 colorscheme PaperColor
+set background=dark
 
 " enable line numbers
 set number

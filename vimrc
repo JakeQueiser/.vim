@@ -81,8 +81,10 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " Cursors
-let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " searching stuff
 nnoremap <c-f> <Plug>CtrlSFPrompt

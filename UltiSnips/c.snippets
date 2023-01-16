@@ -23,9 +23,18 @@
 #		endsnippet
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+global !p
+def mycontext(char):
+	x = vim.current.window.buffer
+	y = vim.current.window.cursor[0]
+	z = vim.current.window.cursor[1]
+	try:
+		return x[y-1][z] != char 
+	except:
+		return True 
+endglobal
 
-
-
+context "mycontext(')')"
 snippet ( "Parenthesis" iA
 (${1:${VISUAL}})$0
 endsnippet

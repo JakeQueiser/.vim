@@ -1,0 +1,221 @@
+snippet beg "Opens a begin section"
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet par "Start a paragraph"
+\paragraph{$1}
+endsnippet
+
+snippet sec "Start a section"
+\section{$1}
+endsnippet
+
+snippet ssec "Start a subsection"
+\subsection{$1}
+endsnippet
+
+snippet sssec "Start a subsubsection"
+\subsubsection{$1}
+endsnippet
+
+snippet sec* "Start a section"
+\section*{$1}
+endsnippet
+
+snippet ssec* "Start a subsection"
+\subsection*{$1}
+endsnippet
+
+snippet sssec* "Start a subsubsection"
+\subsubsection*{$1}
+endsnippet
+
+snippet eq "An equation"
+\begin{equation}
+	${1:${VISUAL}}
+\end{equation}
+$0
+endsnippet
+
+snippet eq* "An equation"
+\begin{equation*}
+	${1:${VISUAL}}
+\end{equation*}
+$0
+endsnippet
+
+snippet bmat "A bmatrix" i
+\begin{bmatrix} $1 \end{bmatrix} $0
+endsnippet
+
+snippet 4 "Inline math"
+\( ${1:${VISUAL}} \) $0
+endsnippet
+
+snippet 44 "Broken math"
+\[
+	${1:${VISUAL}}
+\]
+$0 
+endsnippet
+
+snippet cent "Center environemt"
+\begin{center}
+$0
+\end{center}
+endsnippet
+
+snippet tab "Table enviornment"
+\begin{tabular}{${1:c}}
+	$0${1/((?<=.)c|l|r)|./(?1: & )/g}
+\end{tabular}
+endsnippet
+
+snippet hl "Horizontal divider"
+\hline
+$0
+endsnippet
+
+snippet v "Vector" i
+\vec{$1}
+endsnippet
+
+snippet h "Hat" i
+\hat{$1}
+endsnippet
+
+snippet sum "Summation"
+\sum_{$1}^{$2} $0
+endsnippet
+
+snippet prod "Product"
+\prod_{$1}^{$2} $0
+endsnippet
+
+snippet ali "Aligned and labeled"
+\begin{align}
+	${1:${VISUAL}}
+\end{align}
+$0
+endsnippet
+
+snippet ali* "Aligned"
+\begin{align*}
+	${1:${VISUAL}}
+\end{align*}
+$0
+endsnippet
+
+snippet frac "Fraction" i
+\frac{$1}{$2} $0
+endsnippet
+
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "symbol frac" wr
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+snippet enum "List"
+\begin{enumerate}
+	$0
+\end{enumerate}
+endsnippet
+
+snippet bf "Bold" iA
+\textbf{${1:${VISUAL}}}
+endsnippet
+
+snippet te "Text" i
+\text{${1:${VISUAL}}}
+endsnippet
+
+#snippet bul "Itemize"
+#\begin{itemize}
+#	$0
+#\end{itemize}
+#endsnippet
+# case a
+snippet \item "start list of items" b
+\begin{itemize}
+	\item $1
+\end{itemize}
+endsnippet
+
+# case b
+snippet "(^\s*)\\item\s*\S+.*$" "create next item" r
+`!p snip.rv=match.group(0)`
+`!p snip.rv=match.group(1)`\item $0
+endsnippet
+
+# case c
+snippet "^\s*\\item\s*" "exit itemize" r
+endsnippet
+snippet io "Item" i
+\item $0
+endsnippet
+
+snippet RR "Real Numbers" i
+\mathbb{R}
+endsnippet
+
+snippet 0 "Theta" i
+\theta
+endsnippet
+
+snippet aa "Alpha" i
+\alpha
+endsnippet
+
+snippet _ "Subscript" i
+_{$1} $0
+endsnippet
+
+snippet ( "Parenthesis"
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+snippet [ "Brackets"
+\left[ ${1:${VISUAL}} \right] $0
+endsnippet
+
+snippet { "Curlys"
+\left{ ${1:${VISUAL}} \right} $0
+endsnippet
+
+snippet => "Implies" iA
+\implies $0
+endsnippet
+
+snippet <=> "Iff" iA
+\iff $0
+endsnippet
+
+snippet -> "Right arrow" iA
+\implies $0
+endsnippet
+
+snippet <- "Left arrow" iA
+\implies $0
+endsnippet
+
+snippet bxd "Boxed" 
+\boxed{${1:${VISUAL}}} $0
+endsnippet
+
+snippet nd "Noindent" 
+\noindent $0
+endsnippet
+
+snippet code "Code font" 
+\texttt{${1:${VISUAL}}} $0
+endsnippet
+
+snippet fig "Figure"
+\begin{figure}[${1:H}]
+	\includegraphics{$2}
+	\caption{$3}
+	\centering
+\end{figure}
+$0
+endsnippet

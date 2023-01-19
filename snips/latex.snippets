@@ -1,3 +1,14 @@
+global !p
+def wraps(char):
+	a = vim.current.window.buffer
+	b = vim.current.window.cursor[0]
+	c = vim.current.window.cursor[1]
+	try:
+		return a[b-1][c-1] + a[b-1][c] != char 
+	except:
+		return True 
+endglobal
+
 snippet beg "Opens a begin section"
 \begin{$1}
 	$0
@@ -171,18 +182,33 @@ snippet _ "Subscript" i
 _{$1} $0
 endsnippet
 
-snippet ( "Parenthesis"
+snippet l( "Parenthesis"
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet [ "Brackets"
+snippet l[ "Brackets"
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
-snippet { "Curlys"
+snippet l{ "Curlys"
 \left{ ${1:${VISUAL}} \right} $0
 endsnippet
 
+
+context "wraps('()')"
+snippet ( "parenthesis" iA
+(${1:${VISUAL}})$0
+endsnippet
+
+context "wraps('{}')"
+snippet { "Braces" iA
+{${1:${VISUAL}}}$0
+endsnippet
+
+context "wraps('[]')"
+snippet [ "Brackets" iA
+[${1:${VISUAL}}]$0
+endsnippet
 snippet => "Implies" iA
 \implies $0
 endsnippet

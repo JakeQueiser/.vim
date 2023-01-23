@@ -33,8 +33,9 @@ nvm install node
 ### (5) Git setup
 Enter these commands:
 ```
-git config merge.tool vimdiff
-git config merge.conflictstyle diff3
-git config mergetool.prompt false
+git config --global core.editor vim
+git config --global merge.tool vimdiff
+git config --global merge.conflictstyle diff3
+git config --global mergetool.prompt false
 git config --global mergetool.keepBackup false
 ```

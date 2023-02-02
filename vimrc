@@ -13,8 +13,8 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'stevearc/vim-arduino'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
-
 " use Ctrl + @ to copy to the system clipboard (wayland only)
 nnoremap <C-@> :call system("wl-copy", @")<CR>
 
@@ -144,7 +144,7 @@ nmap <silent> gr <Plug>(coc-references)
 imap jj <Esc>
 
 " global extensions
-let g:coc_global_extensions = ['coc-pyright', 'coc-clangd', 'coc-snippets', 'coc-texlab'] 
+let g:coc_global_extensions = ['coc-pyright', 'coc-clangd', 'coc-snippets', 'coc-texlab', 'coc-sh'] 
 
 let g:tex_flavor = 'latex'
 

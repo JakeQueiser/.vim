@@ -11,9 +11,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'dyng/ctrlsf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'stevearc/vim-arduino'
+Plug 'vimwiki/vimwiki'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
+
 
 " import other (non-file specific) config files
 runtime! vimrc.d/*.vim
@@ -23,6 +25,7 @@ runtime extensions.vim
 " use Ctrl + @ to copy to the system clipboard (wayland only)
 nnoremap <C-@> :call system("wl-copy", @")<CR>
 
+filetype plugin on
 syntax on
 
 " enable line numbers

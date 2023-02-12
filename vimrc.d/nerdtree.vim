@@ -22,7 +22,7 @@ autocmd BufEnter NERD_tree_* | execute 'normal R'
 au CursorHold * if exists("t:NerdTreeBufName") | call <SNR>15_refreshRoot() | endif
 
 " Open the existing NERDTree on each new tab.
-autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 " Reload the window if directory is changed
 augroup DIRCHANGE

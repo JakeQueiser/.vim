@@ -8,12 +8,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'jacoborus/tender.vim'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
-Plug 'dyng/ctrlsf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'stevearc/vim-arduino'
 Plug 'vimwiki/vimwiki'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'liuchengxu/vista.vim'
 call plug#end()
 
 

@@ -1,6 +1,0 @@
-{
-	"coc.preferences.jumpCommand": "tabe",
-	"snippets.userSnippetsDirectory": "$HOME/.vim/snips",
-	"snippets.ultisnips.pythonPrompt": false
-}
-

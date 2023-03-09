@@ -1,7 +1,16 @@
 set nocompatible              " be iMproved, required
 
 call plug#begin()
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" lang server
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
+" snips 
+Plug 'SirVer/ultisnips'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+
+
 Plug 'preservim/nerdtree'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-airline/vim-airline'
@@ -14,6 +23,12 @@ Plug 'vimwiki/vimwiki'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'liuchengxu/vista.vim'
+
+" autocomplete tools
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
 call plug#end()
 
 
@@ -32,10 +47,9 @@ syntax on
 set number
 set relativenumber
 
-" enable folding
-set foldmethod=indent
-set foldlevel=99
+" remap folding: folding reconfigured in LSP settings
 nnoremap <space> za
+
 
 
 " enable highlighting

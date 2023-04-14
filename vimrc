@@ -29,6 +29,9 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
@@ -46,6 +49,14 @@ syntax on
 " enable line numbers
 set number
 set relativenumber
+
+" tabs 4 spaces 
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+
+" tabs to spaces
+set expandtab
 
 " remap folding: folding reconfigured in LSP settings
 nnoremap <space> za
@@ -90,3 +101,5 @@ set signcolumn=yes
 " JJ to escape
 imap jj <Esc>
 
+" load lsp
+runtime! lsps.d/*.vim

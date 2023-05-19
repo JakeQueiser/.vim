@@ -11,3 +11,4 @@ nnoremap <silent> <c-e> :Files<CR>
 nnoremap <c-f> :Ag<CR>
 nnoremap <silent> <c-t> :Tags<CR>
 nnoremap <silent> <c-y> :BTags<CR>
+nnoremap <silent> <c-b> :Buffers<CR>

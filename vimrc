@@ -1,8 +1,16 @@
 set nocompatible              " be iMproved, required
 
 call plug#begin()
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
+" lang server
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
+" snips 
+Plug 'SirVer/ultisnips'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+
+
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-airline/vim-airline'
 Plug 'jacoborus/tender.vim'
@@ -11,9 +19,17 @@ Plug 'tpope/vim-fugitive'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'stevearc/vim-arduino'
 Plug 'vimwiki/vimwiki'
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'liuchengxu/vista.vim'
+
+" autocomplete tools
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 
@@ -32,10 +48,17 @@ syntax on
 set number
 set relativenumber
 
-" enable folding
-set foldmethod=indent
-set foldlevel=99
+" tabs 4 spaces 
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+
+" tabs to spaces
+set expandtab
+
+" remap folding: folding reconfigured in LSP settings
 nnoremap <space> za
+
 
 
 " enable highlighting
@@ -56,8 +79,6 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " Cursors
-" let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-" let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
@@ -76,3 +97,5 @@ set signcolumn=yes
 " JJ to escape
 imap jj <Esc>
 
+" load lsp
+runtime! lsps.d/*.vim

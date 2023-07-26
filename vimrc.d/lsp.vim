@@ -37,3 +37,4 @@ let g:lsp_preview_float = 1
 let g:lsp_experimental_workspace_folders = 1
 let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_diagnostics_float_cursor = 1
+let g:lsp_diagnostics_float_delay = 500

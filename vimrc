@@ -1,4 +1,6 @@
 set nocompatible              " be iMproved, required
+set hidden
+set encoding=utf-8
 
 call plug#begin()
 " lang server
@@ -30,16 +32,16 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'voldikss/vim-floaterm'
+
+Plug 'vim-ctrlspace/vim-ctrlspace'
 call plug#end()
 
 
 " import other (non-file specific) config files
 runtime! vimrc.d/*.vim
 
-" import coc extnensions
-runtime extensions.vim
 " use Ctrl + @ to copy to the system clipboard (wayland only)
-nnoremap <C-@> :call system("wl-copy", @")<CR>
+"nnoremap <C-@> :call system("wl-copy", @")<CR>
 
 filetype plugin on
 syntax on
@@ -57,26 +59,24 @@ set shiftwidth=4
 set expandtab
 
 " remap folding: folding reconfigured in LSP settings
-nnoremap <space> za
-
-
+" nnoremap <space> za
 
 " enable highlighting
 set hlsearch
 
-" change tab switch keys
-nnoremap <Right> gt
-nnoremap <Left> gT
+" turn off the tabline
+set showtabline=0
+let g:airline#extensions#tabline#enabled = 0
 
 " window splits
 set splitbelow
 set splitright
 
 " window naviagation
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+nmap <silent> <Up> :wincmd k<CR>
+nmap <silent> <Down> :wincmd j<CR>
+nmap <silent> <Left> :wincmd h<CR>
+nmap <silent> <Right> :wincmd l<CR>
 
 " Cursors
 let &t_SI = "\e[6 q"

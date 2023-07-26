@@ -39,7 +39,7 @@ runtime! vimrc.d/*.vim
 " import coc extnensions
 runtime extensions.vim
 " use Ctrl + @ to copy to the system clipboard (wayland only)
-nnoremap <C-@> :call system("wl-copy", @")<CR>
+nnoremap <C-#> :call system("wl-copy", @")<CR>
 
 filetype plugin on
 syntax on

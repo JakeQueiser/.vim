@@ -61,8 +61,6 @@ set expandtab
 " remap folding: folding reconfigured in LSP settings
 nnoremap <space> za
 
-
-
 " enable highlighting
 set hlsearch
 

@@ -1,10 +1,6 @@
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 
-" [Tags] Command to generate tags file
-let g:fzf_tags_command = 'ctags -R'
-
-
 nnoremap <silent> <c-e> :Files<CR>
 nnoremap <c-f> :Ag<CR>
 nnoremap <silent> <c-t> :Tags<CR>

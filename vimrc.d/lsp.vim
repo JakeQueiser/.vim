@@ -17,7 +17,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    nmap <buffer> th <plug>(lsp-call-hierarchy-incoming)
+    nmap <buffer> gh <plug>(lsp-call-hierarchy-incoming)
+    nmap <buffer> gH <plug>(lsp-call-hierarchy-outgoing)
     nnoremap <buffer> <expr><c-d> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-s> lsp#scroll(-4)
 

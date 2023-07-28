@@ -1,5 +1,3 @@
-inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " allow modifying the completeopt variable, or it will
@@ -11,16 +9,17 @@ set completeopt=menuone,noinsert,noselect,preview
 
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" function! s:check_back_space() abort
-"     let col = col('.') - 1
-"     return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction
-" 
-" inoremap <silent><expr> <C-Space>
-"   \ pumvisible() ? "\<C-n>" :
-"   \ <SID>check_back_space() ? "\<C-Space>" :
-"   \ asyncomplete#force_refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" remap and refresh on c-j
+inoremap <silent><expr> <C-j>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<C-j>" :
+  \ asyncomplete#force_refresh()
+inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
     \ 'name': 'file',

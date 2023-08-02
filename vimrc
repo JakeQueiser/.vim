@@ -42,7 +42,7 @@ call plug#end()
 runtime! vimrc.d/*.vim
 
 " use Ctrl + @ to copy to the system clipboard (wayland only)
-nnoremap <C-#> :call system("wl-copy", @")<CR>
+nnoremap <C-x> :call system("wl-copy", @")<CR>
 
 filetype plugin on
 syntax on

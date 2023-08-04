@@ -34,6 +34,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 
 Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'simeji/winresizer'
 " Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 

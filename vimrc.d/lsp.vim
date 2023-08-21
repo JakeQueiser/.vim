@@ -19,8 +19,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> K <plug>(lsp-hover)
     nmap <buffer> gh <plug>(lsp-call-hierarchy-incoming)
     nmap <buffer> gH <plug>(lsp-call-hierarchy-outgoing)
-    nnoremap <buffer> <expr><c-d> lsp#scroll(+4)
-    nnoremap <buffer> <expr><c-s> lsp#scroll(-4)
+    nnoremap <buffer> <expr><c-k> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-j> lsp#scroll(-4)
 
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')

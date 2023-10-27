@@ -29,10 +29,9 @@ Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
 Plug 'Donaldttt/fuzzyy'
 
-Plug 'voldikss/vim-floaterm'
-
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'simeji/winresizer'
+Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
@@ -41,7 +40,7 @@ call plug#end()
 runtime! vimrc.d/*.vim
 
 " use Ctrl + @ to copy to the system clipboard (wayland only)
-nnoremap <C-x> :call system("wl-copy", @")<CR>
+nnoremap YY :call system("wl-copy", @")<CR>
 
 filetype plugin on
 syntax on
@@ -73,10 +72,10 @@ set splitbelow
 set splitright
 
 " window naviagation
-nmap <silent> <Up> :wincmd k<CR>
-nmap <silent> <Down> :wincmd j<CR>
-nmap <silent> <Left> :wincmd h<CR>
-nmap <silent> <Right> :wincmd l<CR>
+" nnoremap <silent> <Up> :wincmd k<CR>
+" nnoremap <silent> <Down> :wincmd j<CR>
+" nnoremap <silent> <Left> :wincmd h<CR>
+" nnoremap <silent> <Right> :wincmd l<CR>
 
 " Cursors
 let &t_SI = "\e[6 q"

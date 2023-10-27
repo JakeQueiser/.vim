@@ -11,3 +11,9 @@ let g:vimtex_view_general_options
                 \ . ':execute ''drop '' . fnameescape(''\%f'')^<CR^>'
                 \ . ':\%l^<CR^>:normal\! zzzv^<CR^>'
                 \ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-shell-escape',
+    \ ],
+    \}
+

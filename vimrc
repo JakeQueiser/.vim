@@ -32,7 +32,8 @@ Plug 'Donaldttt/fuzzyy'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'simeji/winresizer'
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'ludovicchabant/vim-gutentags'
+
+Plug '/home/jake/Code/vim-remote'
 call plug#end()
 
 
@@ -71,12 +72,6 @@ let g:airline#extensions#tabline#enabled = 0
 set splitbelow
 set splitright
 
-" window naviagation
-" nnoremap <silent> <Up> :wincmd k<CR>
-" nnoremap <silent> <Down> :wincmd j<CR>
-" nnoremap <silent> <Left> :wincmd h<CR>
-" nnoremap <silent> <Right> :wincmd l<CR>
-
 " Cursors
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
@@ -95,6 +90,26 @@ set signcolumn=yes
 
 " JJ to escape
 imap jj <Esc>
+
+" toggle status line
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 " load lsp
 runtime! lsps.d/*.vim

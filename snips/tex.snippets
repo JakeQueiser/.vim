@@ -174,11 +174,15 @@ snippet RR "Real Numbers" i
 \mathbb{R}
 endsnippet
 
-snippet 0 "Theta" i
+snippet 0 "Theta"  
 \theta
 endsnippet
 
-snippet aa "Alpha" i
+snippet b0 "Big Theta"  
+\Theta\left(${1:${VISUAL}}\right)$0
+endsnippet
+
+snippet aa "Alpha" i 
 \alpha
 endsnippet
 
@@ -186,31 +190,35 @@ snippet _ "Subscript" i
 _{$1} $0
 endsnippet
 
-snippet l( "Parenthesis"
-\left( ${1:${VISUAL}} \right) $0
+snippet ^ "Power" i
+^{$1} $0
 endsnippet
 
-snippet l[ "Brackets"
+snippet lp "Parenthesis"
+\left(${1:${VISUAL}}\right) $0
+endsnippet
+
+snippet lb "Brackets"
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
-snippet l{ "Curlys"
+snippet lc "Curlys"
 \left{ ${1:${VISUAL}} \right} $0
 endsnippet
 
 
 context "wraps('()')"
-snippet ( "parenthesis" A
+snippet ( "parenthesis" iA
 (${1:${VISUAL}})$0
 endsnippet
 
 context "wraps('{}')"
-snippet { "Braces" A
+snippet { "Braces" iA
 {${1:${VISUAL}}}$0
 endsnippet
 
 context "wraps('[]')"
-snippet [ "Brackets" A
+snippet [ "Brackets" iA
 [${1:${VISUAL}}]$0
 endsnippet
 snippet => "Implies" A
@@ -250,6 +258,26 @@ snippet fig "Figure" biA
 $0
 endsnippet
 
+snippet flw "Follows" 
+\curvearrowright $0
+endsnippet
+
+snippet log "Log" i
+\log_{$1}^{$2}\left($3\right) $0
+endsnippet
+
+snippet lg "Lg" i 
+\lg^{$2}$0
+endsnippet
+
+snippet sqrt "Square root" iA
+\sqrt{${1:${VISUAL}}} $0
+endsnippet
+
+snippet \\ "Quick align" i
+\\\\
+$2 & ${1:=} $0
+endsnippet
 
 # beamer
 snippet frm "Frame" bA

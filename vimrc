@@ -40,8 +40,8 @@ call plug#end()
 " import other (non-file specific) config files
 runtime! vimrc.d/*.vim
 
-" use Ctrl + @ to copy to the system clipboard (wayland only)
-nnoremap YY :call system("wl-copy", @")<CR>
+" use ctrl-y to copy to the system clipboard (wayland only)
+nnoremap <C-y> :call system("wl-copy", @")<CR>
 
 filetype plugin on
 syntax on
@@ -110,6 +110,10 @@ function! ToggleHiddenAll()
 endfunction
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
+
+" disable command history
+nnoremap q: <nop>
+nnoremap Q <nop>
 
 " load lsp
 runtime! lsps.d/*.vim

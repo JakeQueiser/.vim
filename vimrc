@@ -3,39 +3,45 @@ set hidden
 set encoding=utf-8
 
 call plug#begin()
-" lang server
+" themes
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'jacoborus/tender.vim'
+
+" snippets
+Plug 'SirVer/ultisnips'
+
+" workspace and project tools
+Plug 'Donaldttt/fuzzyy'
+Plug 'vim-airline/vim-airline'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'tpope/vim-fugitive'
+
+" window management
+Plug 'simeji/winresizer'
+Plug 'christoomey/vim-tmux-navigator'
+
+" latex 
+Plug 'lervag/vimtex'
+
+" arduino
+Plug 'stevearc/vim-arduino'
+
+" lsp and autocomplete tools
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-
-" snips 
-Plug 'SirVer/ultisnips'
-Plug 'thomasfaingnaert/vim-lsp-snippets'
-Plug 'thomasfaingnaert/vim-lsp-ultisnips'
-
-
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'vim-airline/vim-airline'
-Plug 'jacoborus/tender.vim'
-Plug 'lervag/vimtex'
-Plug 'tpope/vim-fugitive'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'stevearc/vim-arduino'
-Plug 'vimwiki/vimwiki'
-
-" autocomplete tools
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
-Plug 'Donaldttt/fuzzyy'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 
-Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'simeji/winresizer'
-Plug 'christoomey/vim-tmux-navigator'
-
-Plug '/home/jake/Code/vim-remote'
+"Plug '/home/jake/Code/vim-remote'
 call plug#end()
 
+nnoremap <silent> <C-u> :tabprevious<CR>
+nnoremap <silent> <C-p> :tabnext<CR>
+nnoremap <silent> <C-@> :tabnew<CR>
 
 " import other (non-file specific) config files
 runtime! vimrc.d/*.vim
@@ -82,7 +88,7 @@ set nowritebackup
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=500
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.

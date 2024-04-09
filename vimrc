@@ -39,9 +39,10 @@ Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 "Plug '/home/jake/Code/vim-remote'
 call plug#end()
 
+set incsearch
+
 nnoremap <silent> <C-u> :tabprevious<CR>
 nnoremap <silent> <C-p> :tabnext<CR>
-nnoremap <silent> <C-@> :tabnew<CR>
 
 " import other (non-file specific) config files
 runtime! vimrc.d/*.vim
@@ -70,10 +71,6 @@ nnoremap <space> za
 " enable highlighting
 set hlsearch
 
-" turn off the tabline
-set showtabline=0
-let g:airline#extensions#tabline#enabled = 0
-
 " window splits
 set splitbelow
 set splitright
@@ -88,7 +85,7 @@ set nowritebackup
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=500
+set updatetime=0
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -106,12 +103,14 @@ function! ToggleHiddenAll()
         set noruler
         set laststatus=0
         set noshowcmd
+        set showtabline=0
     else
-        let s:hidden_all = 0
+        let s:hidden_all=0
         set showmode
         set ruler
         set laststatus=2
         set showcmd
+        set showtabline=1
     endif
 endfunction
 

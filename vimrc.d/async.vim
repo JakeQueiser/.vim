@@ -49,15 +49,21 @@ function! ExpandSnippetOrReturn()
   endif
 endfunction
 function! ExpandSnippetOrTab()
-  let snippet = UltiSnips#ExpandSnippetOrJump()
-  if g:ulti_expand_or_jump_res > 0
-    return snippet
-  else
-    return "\t" " select without newline in popup
-  endif
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\t" " select without newline in popup
+    endif
+endfunction
+
+function! StoreAndDeleteSnips()
+    call UltiSnips#SaveLastVisualSelection()
+    normal! gvd
 endfunction
 
 inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrReturn()<CR>" : "\<CR>"
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "<C-R>=ExpandSnippetOrTab()<CR>"
+vnoremap <Tab>  :call StoreAndDeleteSnips()<CR>
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"

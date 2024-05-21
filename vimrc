@@ -11,7 +11,6 @@ Plug 'jacoborus/tender.vim'
 Plug 'SirVer/ultisnips'
 
 " workspace and project tools
-Plug 'Donaldttt/fuzzyy'
 Plug 'vim-airline/vim-airline'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-fugitive'
@@ -119,6 +118,9 @@ nnoremap <S-h> :call ToggleHiddenAll()<CR>
 " disable command history
 nnoremap q: <nop>
 nnoremap Q <nop>
+
+" quick find replace
+nnoremap <c-s> :let @/ = '\<'.expand('<cword>').'\>'<CR>:set hlsearch<CR>:%s//<Left>
 
 " load lsp
 runtime! lsps.d/*.vim

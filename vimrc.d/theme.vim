@@ -1,3 +1,4 @@
+" Papercolor
 let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.dark': {
@@ -9,6 +10,7 @@ let g:PaperColor_Theme_Options = {
   \ }
 colorscheme PaperColor
 set background=dark
-
+" airline
+let g:airline_inactive_cursors = [ ''] 
 
 

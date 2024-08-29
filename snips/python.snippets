@@ -1,13 +1,4 @@
-global !p
-def wraps(char):
-	a = vim.current.window.buffer
-	b = vim.current.window.cursor[0]
-	c = vim.current.window.cursor[1]
-	try:
-		return a[b-1][c-1] + a[b-1][c] != char 
-	except:
-		return True 
-endglobal
+extends delimiters.snippets
 
 snippet """ "Function definition" b
 """
@@ -19,21 +10,6 @@ Keyword Arugments
 $2 -- $3
 $0
 """
-endsnippet
-
-context "wraps('()')"
-snippet ( "parenthesis" iA
-(${1:${VISUAL}})$0
-endsnippet
-
-context "wraps('{}')"
-snippet { "Braces" iA
-{${1:${VISUAL}}}$0
-endsnippet
-
-context "wraps('[]')"
-snippet [ "Brackets" iA
-[${1:${VISUAL}}]$0
 endsnippet
 
 snippet if "If statement"

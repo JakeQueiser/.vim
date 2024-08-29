@@ -22,6 +22,10 @@ Plug 'christoomey/vim-tmux-navigator'
 " latex 
 Plug 'lervag/vimtex'
 
+"fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " arduino
 Plug 'stevearc/vim-arduino'
 
@@ -39,15 +43,6 @@ Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 call plug#end()
 
 set incsearch
-
-nnoremap <silent> <C-u> :tabprevious<CR>
-nnoremap <silent> <C-p> :tabnext<CR>
-
-" import other (non-file specific) config files
-runtime! vimrc.d/*.vim
-
-" use ctrl-y to copy to the system clipboard (wayland only)
-nnoremap <C-y> :call system("wl-copy", @")<CR>
 
 filetype plugin on
 syntax on
@@ -113,14 +108,9 @@ function! ToggleHiddenAll()
     endif
 endfunction
 
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
-
-" disable command history
-nnoremap q: <nop>
-nnoremap Q <nop>
-
-" quick find replace
-nnoremap <c-s> :let @/ = '\<'.expand('<cword>').'\>'<CR>:set hlsearch<CR>:%s//<Left>
-
 " load lsp
 runtime! lsps.d/*.vim
+
+" import other (non-file specific) config files
+runtime! vimrc.d/*.vim
+

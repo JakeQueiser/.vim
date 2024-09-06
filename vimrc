@@ -44,6 +44,9 @@ call plug#end()
 
 set incsearch
 
+" this was specifically set to speed up esc with jj
+set timeoutlen=300
+
 filetype plugin on
 syntax on
 
@@ -58,9 +61,6 @@ set shiftwidth=4
 
 " tabs to spaces
 set expandtab
-
-" remap folding: folding reconfigured in LSP settings
-nnoremap <space> za
 
 " enable highlighting
 set hlsearch
@@ -85,28 +85,14 @@ set updatetime=0
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
-" JJ to escape
+" jj to escape
 imap jj <Esc>
 
-" toggle status line
-let s:hidden_all = 0
-function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
-        set noshowmode
-        set noruler
-        set laststatus=0
-        set noshowcmd
-        set showtabline=0
-    else
-        let s:hidden_all=0
-        set showmode
-        set ruler
-        set laststatus=2
-        set showcmd
-        set showtabline=1
-    endif
-endfunction
+" set folding mode
+set foldmethod=expr
+  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+  \ foldtext=lsp#ui#vim#folding#foldtext()
+set foldlevel=100000
 
 " load lsp
 runtime! lsps.d/*.vim

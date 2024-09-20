@@ -33,3 +33,6 @@ function! StoreAndDeleteSnips()
     call UltiSnips#SaveLastVisualSelection()
     normal! gvd
 endfunction
+
+" autocmd User asyncomplete_setup call asyncomplete#register_source(
+"     \ asyncomplete#sources#clang#get_source_options())

@@ -61,6 +61,7 @@ set shiftwidth=4
 
 " tabs to spaces
 set expandtab
+set smarttab
 
 " enable highlighting
 set hlsearch
@@ -89,10 +90,10 @@ set signcolumn=yes
 imap jj <Esc>
 
 " set folding mode
-set foldmethod=expr
-  \ foldexpr=lsp#ui#vim#folding#foldexpr()
-  \ foldtext=lsp#ui#vim#folding#foldtext()
-set foldlevel=100000
+"set foldmethod=expr
+"  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+"  \ foldtext=lsp#ui#vim#folding#foldtext()
+"set foldlevel=100000
 
 " load lsp
 runtime! lsps.d/*.vim

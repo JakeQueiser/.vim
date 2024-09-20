@@ -1,3 +1,6 @@
+" Autocomplete
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
 " Tabs
 nnoremap <silent> <C-u> :tabprevious<CR>
 nnoremap <silent> <C-p> :tabnext<CR>
@@ -59,11 +62,11 @@ function! On_lsp_buffer_enabled_keys() abort
 endfunction
 
 " async-complete
-inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrReturn()<CR>" : "\<CR>"
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "<C-R>=ExpandSnippetOrTab()<CR>"
-vnoremap <Tab>  :call StoreAndDeleteSnips()<CR>
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+"inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrReturn()<CR>" : "\<CR>"
+"inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "<C-R>=ExpandSnippetOrTab()<CR>"
+"vnoremap <Tab>  :call StoreAndDeleteSnips()<CR>
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " FZF
 nnoremap <C-@>f :Files<CR>
@@ -80,9 +83,9 @@ nnoremap <silent> <Leader>[ :diffget //2<CR>
 nnoremap <silent> <Leader>] :diffget //3<CR>
 
 " Ultisnips
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-e>"
-let g:UltiSnipsJumpBackwardTrigger="<c-g>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Tmux navigator
 noremap <silent> <C-h> :<C-U>TmuxNavigateLeft<cr>

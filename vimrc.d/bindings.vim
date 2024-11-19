@@ -1,6 +1,3 @@
-" Autocomplete
-inoremap <C-j> <C-n>
-inoremap <C-k> <C-p>
 " Tabs
 nnoremap <silent> <C-u> :tabprevious<CR>
 nnoremap <silent> <C-p> :tabnext<CR>
@@ -62,6 +59,8 @@ function! On_lsp_buffer_enabled_keys() abort
 endfunction
 
 " async-complete
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
 "inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrReturn()<CR>" : "\<CR>"
 "inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "<C-R>=ExpandSnippetOrTab()<CR>"
 "vnoremap <Tab>  :call StoreAndDeleteSnips()<CR>

@@ -21,31 +21,31 @@ nnoremap <space> za
 " LSP
 function! On_lsp_buffer_enabled_keys() abort
     nmap <buffer> gd <plug>(lsp-peek-definition)
-    nmap <buffer> gD <plug>(lsp-definition)
+    nmap <buffer> <c-g>d <plug>(lsp-definition)
     nmap <buffer> \gd :vsp<cr><plug>(lsp-definition)
     nmap <buffer> -gd :sp<cr><plug>(lsp-definition)
 
-    nmap <buffer> gg <plug>(lsp-peek-declaration)
-    nmap <buffer> gG <plug>(lsp-declaration)
-    nmap <buffer> \gg :vsp<cr><plug>(lsp-declaration)
-    nmap <buffer> -gg :sp<cr><plug>(lsp-declaration)
+    nmap <buffer> gD <plug>(lsp-peek-declaration)
+    nmap <buffer> <c-g>D <plug>(lsp-declaration)
+    nmap <buffer> \gD :vsp<cr><plug>(lsp-declaration)
+    nmap <buffer> -gD :sp<cr><plug>(lsp-declaration)
 
     nmap <buffer> gi <plug>(lsp-peek-implementation)
-    nmap <buffer> gI <plug>(lsp-implementation)
+    nmap <buffer> <c-g>i <plug>(lsp-implementation)
     nmap <buffer> \gi :vsp<cr><plug>(lsp-implementation)
     nmap <buffer> -gi :sp<cr><plug>(lsp-implementation)
 
     nmap <buffer> gt <plug>(lsp-peek-type-definition)
-    nmap <buffer> gT <plug>(lsp-type-definition)
+    nmap <buffer> <c-g>t <plug>(lsp-type-definition)
     nmap <buffer> \gt :vsp<cr><plug>(lsp-type-definition)
     nmap <buffer> -gt :sp<cr><plug>(lsp-type-definition)
 
     nmap <buffer> gs <plug>(lsp-document-symbol-search)
-    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> <c-g>s <plug>(lsp-workspace-symbol-search)
 
     nmap <buffer> gr <plug>(lsp-references)
 
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> <c-g>r <plug>(lsp-rename)
 
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)

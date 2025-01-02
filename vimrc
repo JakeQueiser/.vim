@@ -39,6 +39,8 @@ Plug 'prabirshrestha/asyncomplete-file.vim'
 Plug 'thomasfaingnaert/vim-lsp-snippets'
 Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 
+Plug 'voldikss/vim-floaterm'
+Plug 'tpope/vim-vinegar'
 "Plug '/home/jake/Code/vim-remote'
 call plug#end()
 

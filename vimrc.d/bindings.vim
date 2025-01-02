@@ -1,6 +1,16 @@
 " Tabs
 nnoremap <silent> <C-u> :tabprevious<CR>
 nnoremap <silent> <C-p> :tabnext<CR>
+nnoremap <silent> <leader>nt :tabnew<CR>
+nnoremap <silent> <leader>t :tabs<CR>:tab <C-R>=input("Tab number: ")<CR><CR>
+
+" term
+nnoremap <silent> <F4> :FloatermNew<CR>
+tnoremap <silent> <F4> <C-\><C-n>:FloatermNew<CR>
+nnoremap <silent> <F5> :FloatermToggle<CR>
+tnoremap <silent> <F5> <C-\><C-n>:FloatermToggle<CR>
+tnoremap <silent> <C-u> <C-\><C-n>:FloatermNext<CR>
+tnoremap <silent> <C-p> <C-\><C-n>:FloatermPrev<CR>
 
 " wayland clipboard
 nnoremap <C-y> :call system("wl-copy", @")<CR>
@@ -68,9 +78,12 @@ inoremap <C-k> <C-p>
 "inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " FZF
-nnoremap <C-@>f :Files<CR>
-nnoremap <silent> <C-@>b :Buffers<CR>
-nnoremap <C-@>s :Ex 
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>j :Jumps<CR>
+nnoremap <silent> <Leader>l :Lines<CR>
+nnoremap <silent> <Leader>m :Marks<CR>
+nnoremap <silent> <Leader>w :Windows<CR>
 
 " Command Mode
 cnoremap <C-j> <Down>
